@@ -1,0 +1,78 @@
+body{
+    background: #f2f2f2;
+}
+.cabecalho{
+    background:  #0AA3A0;
+    height: 70px;
+
+}
+.cabecalho a{
+    color: aliceblue;
+    margin-right: 20px;
+    border-bottom-style: solid;
+    border-bottom-width: thick;
+    border-bottom-color: #0AA3A0;
+    
+    
+    
+}
+.cabecalho a:hover{
+    
+    border-bottom-color: white;
+    transition: 1s;
+}
+.titulo{
+    height: 90px;
+    background-color: #4d4d4d;
+}
+
+.titulo h1{
+    text-align: center;
+    padding-top: 15px;
+    font-family: "Segoe UI";
+    color: whitesmoke;
+    text-shadow: 3px 2px 5px #737373;
+    font-size: 50px;
+}
+
+.caixa{
+    padding-top: 30px;
+    height: 420px;
+    border-style: solid;
+    padding-left: 20px;
+    border-color:#8c8c8c;
+    background: #f2f2f2;
+}
+
+.btn-add{
+    background:  #0AA3A0;
+    color: antiquewhite;
+    border: none;
+    width: 130px;
+    height: 40px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.btn-limpar{
+    background-color: #DE423C;
+    color: antiquewhite;
+    border: none;
+    width: 130px;
+    height: 40px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+footer .rodape{
+    height: 130px;
+    margin-top: 30px;
+    background:  #0AA3A0;
+    
+}
+
+footer .rodape p{
+    color: azure;
+    padding-top: 30px;
+    text-align: center;
+}
