@@ -17,81 +17,76 @@
     </head>
     <body>
         
-         <nav class="navbar navbar-expand-lg cabecalho">
-  
-  <div class="collapse navbar-collapse .cabecalho" id="navbarNav">
-      <div class="container">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Inicio <span class="sr-only">(atual)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Cliente</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Fornecedor</a>
-      </li>
-    </ul>
-      </div>
-  </div>
-</nav>
-      
-    
-
-    
-<div class="container">
-    <div class="titulo">
-  <h1>Cadastro de Cliente</h1>
-    
-    </div>
+      <nav class="navbar navbar-expand-lg cabecalho">
+        <div class="collapse navbar-collapse .cabecalho" id="navbarNav">
+        <div class="container">
+        <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Inicio <span class="sr-only">(atual)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Cliente</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Fornecedor</a>
+        </li>
+        </ul>
+            </div>
+         </div>
+      </nav>
+         
+    <div class="container">
+        <div class="titulo">
+            <h1>Cadastro de Cliente</h1>
+        </div>
     </div>
     
     <div class="container">
-    <div class="caixa">
-        <form>
-        <div class="row">
-     <div class="col-md-6">
-         <div class="form-group">
-  <label for="usr">Nome Completo:</label>
-  <input type="text" class="form-control" id="usr">
-</div>
-            </div>
+        <div class="caixa">
+            <form>
+            <div class="row">
+                <div class="col-md-6">
+                <div class="form-group">
+                <label for="usr">Nome Completo:</label>
+                <input type="text" class="form-control" id="usr">
+                </div>
+                </div>
         <div class="col-md-4">
             <div class="form-group">
-  <label for="usr">CPF:</label>
-  <input type="text" class="form-control" id="usr">
-</div>
-            </div>
+            <label for="usr">CPF:</label>
+            <input type="text" class="form-control" id="usr">
+        </div>
+        </div>
         </div>
         
-         <div class="row">
+    <div class="row">
      <div class="col-md-4">
          <div class="form-group">
-  <label for="usr">RG:</label>
-  <input type="text" class="form-control" id="usr">
-</div>
-            </div>
-        <div class="col-md-6">
-            <div class="form-group">
-  <label for="usr">Email:</label>
-  <input type="text" class="form-control" id="usr">
-</div>
-            </div>
-        </div>
+         <label for="usr">RG:</label>
+            <input type="text" class="form-control" id="usr">
+    </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="usr">Email:</label>
+        <input type="text" class="form-control" id="usr">
+    </div>
+    </div>
+    </div>
         
-         <div class="row">
-     <div class="col-md-4">
-         <div class="form-group">
-  <label for="usr">Telefone:</label>
-  <input type="text" class="form-control" id="usr">
-</div>
-            </div>
+     <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+            <label for="usr">Telefone:</label>
+            <input type="text" class="form-control" id="usr">
+      </div>
+      </div>
         <div class="col-md-6">
             <div class="form-group">
-  <label for="usr">Endereço:</label>
-  <input type="text" class="form-control" id="usr">
-</div>
-            </div>
+            <label for="usr">Endereço:</label>
+            <input type="text" class="form-control" id="usr">
+        </div>
+        </div>
         </div>
         
         <div class="row">
@@ -102,14 +97,10 @@
     </div>
     </div>
     
-    
-   
-
     <footer>
         <div class="rodape">
             <p>Todos os direiitos reservados</p>
         </div>
     </footer>
-
     </body>
 </html>
