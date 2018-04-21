@@ -12,9 +12,6 @@ body{
     border-bottom-style: solid;
     border-bottom-width: thick;
     border-bottom-color: #0AA3A0;
-    
-    
-    
 }
 .cabecalho a:hover{
     
@@ -22,13 +19,24 @@ body{
     transition: 1s;
 }
 
-/* index*/  
+/* index*/ 
+
+.titulo-index{
+    text-align: center;
+    font-size: 35px;
+    padding-top: 15px;
+    font-family: "Segoe UI";
+    color: whitesmoke;
+    text-shadow: 3px 2px 5px #737373;
+}
 .caixa-img{
     width: 600px;
     margin: 0 auto;
     margin-top: 140px; 
     padding-bottom: 50px;
+   
 }
+
 
 
 
@@ -47,7 +55,13 @@ body{
     border-color:#0AA3A0; 
     margin-left: 50px;
     background: #ccd9ff;
+     opacity:0.5;
     
+}
+
+.caixa-img img:hover{
+    transition: 0.5s;
+    opacity:1.0;
 }
 
 .caixa-img .clientespan{
