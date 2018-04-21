@@ -108,17 +108,39 @@ body{
 }
 
 .cliente-cadastrado{
+    background: #4d4d4d;
+    width: 1110px;
+    margin-left: 120px;
+    margin-top: 50px;
+}
+.cliente-cadastrado p{
+    margin: 0 auto;
     font-size: 50px;
+    text-align: center;
+    padding-top: 5px;
+    font-family: "Segoe UI";
+    color: whitesmoke;
+    text-shadow: 3px 2px 5px #737373;
+    font-size: 50px;
+    
+    
 }
 /*TABELA */
 .caixa-tabela{
-    margin-top: 50px;
+    margin-top: 2px;
+    border: solid;
+    border-color: gray;
+    margin-bottom: 50px;
+}
+.caixa-tabela input{
+    background-color: #DE423C;
+    color: antiquewhite;
+    border: none;
+    width: 80px;
 }
 
-footer .rodape{
-    height: 130px;
-    margin-top: 30px;
-    background:  #0AA3A0;
+.caixa-tabela .alterar{
+    background-color: #00cc44;
     
 }
 
@@ -127,3 +149,11 @@ footer .rodape p{
     padding-top: 30px;
     text-align: center;
 }
+
+footer .rodape{
+    height: 130px;
+    margin-top: 30px;
+    background:  #0AA3A0;   
+}
+
+

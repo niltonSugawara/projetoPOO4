@@ -97,8 +97,8 @@
     </div>
     </div>
         
-        <div>
-            <p class="cliente-cadastrado">Clientes Cadastrados</p>
+        <div class="cliente-cadastrado">
+            <p>Clientes Cadastrados</p>
         </div>
         
         <div class="col-md-12 caixa-tabela">    
@@ -121,6 +121,12 @@
         <td>Doe</td>
         <td>john@example.com</td>
         <td>john@example.com</td>
+        <td>
+            <form>
+                    <input type="hidden" name="i" value=""/>
+                    <input type="submit" name="del" value="Alterar" class="alterar">
+                    </form>
+        </td>
         <td>
             <form>
                     <input type="hidden" name="i" value=""/>
