@@ -21,6 +21,49 @@ body{
     border-bottom-color: white;
     transition: 1s;
 }
+
+/* index*/  
+.caixa-img{
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 140px; 
+    padding-bottom: 50px;
+}
+
+
+
+.caixa-img span{
+    position: relative;
+    font-family: "Segoe UI";
+    font-size: 25px;
+    color: dimgray;
+    margin: 16%;
+    
+}
+.caixa-img img{
+    border-radius: 50%;
+    margin-left: 30px;
+    border: solid;
+    border-color:#0AA3A0; 
+    margin-left: 50px;
+    background: #ccd9ff;
+    
+}
+
+.caixa-img .clientespan{
+     position: relative;
+    left: 20px;
+}
+.caixa-img .spanforne{
+     position: relative;
+     right: 25px;
+}
+
+
+.caixa-img .cliente{
+    width: 200px;
+}
+
 .titulo{
     height: 90px;
     background-color: #4d4d4d;
