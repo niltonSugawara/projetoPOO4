@@ -22,7 +22,7 @@
         <div class="container">
         <ul class="navbar-nav">
         <li class="nav-item active">
-            <a class="nav-link" href="#">Inicio <span class="sr-only">(atual)</span></a>
+            <a class="nav-link" href="index.jsp">Inicio <span class="sr-only">(atual)</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Cliente</a>
