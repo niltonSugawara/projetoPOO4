@@ -96,7 +96,48 @@
         </form>
     </div>
     </div>
-    
+        
+        <div class="cliente-cadastrado">
+            <p>Clientes Cadastrados</p>
+        </div>
+        
+        <div class="col-md-12 caixa-tabela">    
+     <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nome Completo</th>
+        <th>CPF</th>
+        <th>RG</th>
+        <th>Email</th>
+        <th>Telefone</th>
+        <th>Endereço</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>john@example.com</td>
+        <td>Doe</td>
+        <td>teste</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+        <td>john@example.com</td>
+        <td>
+            <form>
+                    <input type="hidden" name="i" value=""/>
+                    <input type="submit" name="del" value="Alterar" class="alterar">
+                    </form>
+        </td>
+        <td>
+            <form>
+                    <input type="hidden" name="i" value=""/>
+                    <input type="submit" name="del" value="Excluir">
+                    </form>
+        </td>
+      </tr> 
+    </tbody>
+  </table>
+        </div>
+        
     <footer>
         <div class="rodape">
             <p>Todos os direiitos reservados</p>

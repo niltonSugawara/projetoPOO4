@@ -21,6 +21,7 @@
   
   <div class="collapse navbar-collapse .cabecalho" id="navbarNav">
       <div class="container">
+          <p class="titulo-index">Projeto POO</p>
       </div>
   </div>
 </nav>
