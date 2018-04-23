@@ -66,13 +66,13 @@
                 <div class="col-md-6">
                 <div class="form-group">
                 <label for="usr">Nome Completo:</label>
-                <input type="text" class="form-control" id="usr" name="nome">
+                <input type="text" class="form-control" id="usr" name="nome" required="">
                 </div>
                 </div>
         <div class="col-md-4">
             <div class="form-group">
             <label for="usr">CPF:</label>
-            <input type="text" class="form-control" id="usr" name="cpf">
+            <input type="text" class="form-control" id="usr" name="cpf" required="" maxlength="11" minlength="11">
         </div>
         </div>
         </div>
@@ -81,13 +81,13 @@
      <div class="col-md-4">
          <div class="form-group">
          <label for="usr">RG:</label>
-         <input type="text" class="form-control" id="usr" name="rg">
+         <input type="text" class="form-control" id="usr" name="rg" required="" maxlength="14">
     </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
         <label for="usr">Email:</label>
-        <input type="text" class="form-control" id="usr" name="email">
+        <input type="email" class="form-control" id="usr" name="email" required="" >
     </div>
     </div>
     </div>
@@ -96,13 +96,14 @@
         <div class="col-md-4">
             <div class="form-group">
             <label for="usr">Telefone:</label>
-            <input type="text" class="form-control" id="usr" name="telefone">
+            <input type="text" class="form-control" id="usr" name="telefone"
+                   required="" maxlength="12" minlength="11">
       </div>
       </div>
         <div class="col-md-6">
             <div class="form-group">
             <label for="usr">Endereço:</label>
-            <input type="text" class="form-control" id="usr" name="endereco">
+            <input type="text" class="form-control" id="usr" name="endereco" required="">
         </div>
         </div>
         </div>
@@ -142,8 +143,8 @@
         <td><%= BdClientes.getClientesList().get(i).getEndereco() %></td>
         <td>
             <form>
-                    <input type="hidden" name="i" value=""/>
-                    <input type="submit" value="Alterar" class="alterar">
+                <input type="hidden" name="i" value="<%=i%>"/>
+                <input type="submit" name="alt" value="Alterar" class="alterar">
                     </form>
         </td>
         <td>
