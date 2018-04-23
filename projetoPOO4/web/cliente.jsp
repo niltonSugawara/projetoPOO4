@@ -43,10 +43,10 @@
             <a class="nav-link" href="index.jsp">Inicio <span class="sr-only">(atual)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Cliente</a>
+            <a class="nav-link" href="cliente.jsp">Cliente</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Fornecedor</a>
+            <a class="nav-link" href="fornecedor.jsp">Fornecedor</a>
         </li>
         </ul>
             </div>
