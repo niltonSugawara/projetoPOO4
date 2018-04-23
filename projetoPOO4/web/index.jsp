@@ -30,7 +30,7 @@
          <a href="cliente.jsp" >
              <img src="img/cliente.png" class="cliente">
           </a>
-          <a href="#">
+          <a href="fornecedor.jsp">
           <img src="img/fornecedor.png">
           </a>
           <span class="clientespan">Cliente</span>
