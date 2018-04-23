@@ -5,10 +5,20 @@
  */
 package br.com.fatecpggrupo3.bd;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author mitsuharu
  */
 public class BdFornecedores {
     
+    
+    private static ArrayList<Fornecedores> fornecedoresList = new ArrayList<>();
+    
+    public static ArrayList<Fornecedores> getFornecedoresList() {
+        return fornecedoresList;
+    
+    
+}
 }
