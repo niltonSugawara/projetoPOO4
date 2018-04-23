@@ -4,8 +4,26 @@
     Author     : Ton
 --%>
 
+<%@page import="br.com.fatecpggrupo3.bd.BdClientes"%>
+<%@page import="br.com.fatecpggrupo3.bd.Clientes"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%  if (request.getParameter("add")!= null){
+        Clientes c = new Clientes();
+        c.setNome(request.getParameter("nome"));
+        c.setCpf(request.getParameter("cpf"));
+        c.setRg(request.getParameter("rg"));
+        c.setEmail(request.getParameter("email"));
+        c.setTelefone(request.getParameter("telefone"));
+        c.setEndereco(request.getParameter("endereco"));
+        BdClientes.getClientesList().add(c);
+        response.sendRedirect(request.getRequestURI());
+} else if (request.getParameter("del") != null){
+        int i = Integer.parseInt(request.getParameter("i"));
+        BdClientes.getClientesList().remove(i);
+        response.sendRedirect(request.getRequestURI());
+}
+%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -48,13 +66,13 @@
                 <div class="col-md-6">
                 <div class="form-group">
                 <label for="usr">Nome Completo:</label>
-                <input type="text" class="form-control" id="usr">
+                <input type="text" class="form-control" id="usr" name="nome">
                 </div>
                 </div>
         <div class="col-md-4">
             <div class="form-group">
             <label for="usr">CPF:</label>
-            <input type="text" class="form-control" id="usr">
+            <input type="text" class="form-control" id="usr" name="cpf">
         </div>
         </div>
         </div>
@@ -63,13 +81,13 @@
      <div class="col-md-4">
          <div class="form-group">
          <label for="usr">RG:</label>
-            <input type="text" class="form-control" id="usr">
+         <input type="text" class="form-control" id="usr" name="rg">
     </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
         <label for="usr">Email:</label>
-        <input type="text" class="form-control" id="usr">
+        <input type="text" class="form-control" id="usr" name="email">
     </div>
     </div>
     </div>
@@ -78,19 +96,19 @@
         <div class="col-md-4">
             <div class="form-group">
             <label for="usr">Telefone:</label>
-            <input type="text" class="form-control" id="usr">
+            <input type="text" class="form-control" id="usr" name="telefone">
       </div>
       </div>
         <div class="col-md-6">
             <div class="form-group">
             <label for="usr">Endereço:</label>
-            <input type="text" class="form-control" id="usr">
+            <input type="text" class="form-control" id="usr" name="endereco">
         </div>
         </div>
         </div>
         
         <div class="row">
-            <input type="submit" value="Adicionar" class="btn-add">
+            <input type="submit" value="Adicionar" class="btn-add" name="add">
             <input type="reset" value="Limpar" class="btn-limpar">
         </div>
         </form>
@@ -114,33 +132,35 @@
       </tr>
     </thead>
     <tbody>
+        <%for (int i =0; i<BdClientes.getClientesList().size();i++) {%>
       <tr>
-        <td>john@example.com</td>
-        <td>Doe</td>
-        <td>teste</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-        <td>john@example.com</td>
+        <td><%= BdClientes.getClientesList().get(i).getNome() %></td>
+        <td><%= BdClientes.getClientesList().get(i).getCpf() %></td>
+        <td><%= BdClientes.getClientesList().get(i).getRg() %></td>
+        <td><%= BdClientes.getClientesList().get(i).getEmail() %></td>
+        <td><%= BdClientes.getClientesList().get(i).getTelefone() %></td>
+        <td><%= BdClientes.getClientesList().get(i).getEndereco() %></td>
         <td>
             <form>
                     <input type="hidden" name="i" value=""/>
-                    <input type="submit" name="del" value="Alterar" class="alterar">
+                    <input type="submit" value="Alterar" class="alterar">
                     </form>
         </td>
         <td>
             <form>
-                    <input type="hidden" name="i" value=""/>
+              <input type="hidden" name="i" value="<%=i%>"/>
                     <input type="submit" name="del" value="Excluir">
                     </form>
         </td>
       </tr> 
+      <%}%>
     </tbody>
   </table>
         </div>
         
     <footer>
         <div class="rodape">
-            <p>Todos os direiitos reservados</p>
+            <p>Todos os direitos reservados</p>
         </div>
     </footer>
     </body>
