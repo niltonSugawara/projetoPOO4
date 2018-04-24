@@ -14,11 +14,15 @@ import java.util.ArrayList;
 public class BdFornecedores {
     
     
-    private static ArrayList<Fornecedores> fornecedoresList = new ArrayList<>();
+    public static ArrayList<Fornecedores> fornecedoresList = new ArrayList<>();
     
     public static ArrayList<Fornecedores> getFornecedoresList() {
         return fornecedoresList;
     
     
 }
+
+    public static void setFornecedoresList(ArrayList<Fornecedores> aFornecedoresList) {
+        fornecedoresList = aFornecedoresList;
+    }
 }

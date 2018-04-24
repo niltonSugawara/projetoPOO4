@@ -8,21 +8,50 @@
 <%@page import="br.com.fatecpggrupo3.bd.Clientes"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%  if (request.getParameter("add")!= null){
+<% int indice = 0;%>
+
+<%  
         Clientes c = new Clientes();
+        c.setNome("");
+        c.setCpf("");
+        c.setRg("");
+        c.setEmail("");
+        c.setTelefone("");
+        c.setEndereco("");
+    if (request.getParameter("add")!= null){
         c.setNome(request.getParameter("nome"));
         c.setCpf(request.getParameter("cpf"));
         c.setRg(request.getParameter("rg"));
         c.setEmail(request.getParameter("email"));
         c.setTelefone(request.getParameter("telefone"));
-        c.setEndereco(request.getParameter("endereco"));
+        c.setEndereco(request.getParameter("endereco"));    
+        
         BdClientes.getClientesList().add(c);
         response.sendRedirect(request.getRequestURI());
 } else if (request.getParameter("del") != null){
         int i = Integer.parseInt(request.getParameter("i"));
         BdClientes.getClientesList().remove(i);
         response.sendRedirect(request.getRequestURI());
-}
+} else if (request.getParameter("alt") != null){
+        
+        c.setNome(BdClientes.getClientesList().get(Integer.parseInt(request.getParameter("i"))).getNome());
+        c.setCpf(BdClientes.getClientesList().get(Integer.parseInt(request.getParameter("i"))).getCpf());
+        c.setRg(BdClientes.getClientesList().get(Integer.parseInt(request.getParameter("i"))).getRg());   
+        c.setEmail(BdClientes.getClientesList().get(Integer.parseInt(request.getParameter("i"))).getEmail());
+        c.setTelefone(BdClientes.getClientesList().get(Integer.parseInt(request.getParameter("i"))).getTelefone());
+        c.setEndereco(BdClientes.getClientesList().get(Integer.parseInt(request.getParameter("i"))).getEndereco());
+        indice = Integer.parseInt(request.getParameter("i"));
+
+} else if (request.getParameter("salvar") !=null){
+        c.setNome(request.getParameter("nome"));
+        c.setCpf(request.getParameter("cpf"));
+        c.setRg(request.getParameter("rg"));
+        c.setEmail(request.getParameter("email"));
+        c.setTelefone(request.getParameter("telefone"));
+        c.setEndereco(request.getParameter("endereco")); 
+        BdClientes.clientesList.set(Integer.parseInt(request.getParameter("indice")), c);
+
+}      
 %>
 <html>
     <head>
@@ -66,13 +95,13 @@
                 <div class="col-md-6">
                 <div class="form-group">
                 <label for="usr">Nome Completo:</label>
-                <input type="text" class="form-control" id="usr" name="nome" required="">
+                <input type="text" class="form-control" id="usr" name="nome" required="" value="<%= c.getNome() %>">
                 </div>
                 </div>
         <div class="col-md-4">
             <div class="form-group">
             <label for="usr">CPF:</label>
-            <input type="text" class="form-control" id="usr" name="cpf" required="" maxlength="11" minlength="11">
+            <input type="text" class="form-control" id="usr" name="cpf" required="" maxlength="11" minlength="11" value="<%= c.getCpf()%>">
         </div>
         </div>
         </div>
@@ -81,13 +110,13 @@
      <div class="col-md-4">
          <div class="form-group">
          <label for="usr">RG:</label>
-         <input type="text" class="form-control" id="usr" name="rg" required="" maxlength="14">
+         <input type="text" class="form-control" id="usr" name="rg" required="" maxlength="14" value="<%= c.getRg()%>">
     </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
         <label for="usr">Email:</label>
-        <input type="email" class="form-control" id="usr" name="email" required="" >
+        <input type="email" class="form-control" id="usr" name="email" required="" value="<%= c.getEmail()%>">
     </div>
     </div>
     </div>
@@ -97,26 +126,39 @@
             <div class="form-group">
             <label for="usr">Telefone:</label>
             <input type="text" class="form-control" id="usr" name="telefone"
-                   required="" maxlength="12" minlength="11">
+                   required="" maxlength="12" minlength="11" value="<%= c.getTelefone()%>">
       </div>
       </div>
         <div class="col-md-6">
             <div class="form-group">
             <label for="usr">Endereço:</label>
-            <input type="text" class="form-control" id="usr" name="endereco" required="">
+            <input type="text" class="form-control" id="usr" name="endereco" required="" value="<%= c.getEndereco()%>">
         </div>
         </div>
         </div>
         
         <div class="row">
+            <%if (request.getParameter("alt") == null){
+            %>
             <input type="submit" value="Adicionar" class="btn-add" name="add">
+            <%
+            }else {
+            %>
+            <input type="submit" value="Salvar" class="btn-add" name="salvar">
+            <input type="hidden" name="indice" value="<%=indice%>">
+            
+            <%}%>
+            
+            
+            
             <input type="reset" value="Limpar" class="btn-limpar">
         </div>
         </form>
     </div>
     </div>
-        
+        <center>
         <div class="cliente-cadastrado">
+            
             <p>Clientes Cadastrados</p>
         </div>
         
@@ -133,7 +175,8 @@
       </tr>
     </thead>
     <tbody>
-        <%for (int i =0; i<BdClientes.getClientesList().size();i++) {%>
+        <%for (int i =0; i<BdClientes.getClientesList().size();i++) {
+        %>
       <tr>
         <td><%= BdClientes.getClientesList().get(i).getNome() %></td>
         <td><%= BdClientes.getClientesList().get(i).getCpf() %></td>
@@ -144,13 +187,14 @@
         <td>
             <form>
                 <input type="hidden" name="i" value="<%=i%>"/>
-                <input type="submit" name="alt" value="Alterar" class="alterar">
+                <input type="submit" name="alt" value="Alterar" class="alterar"/>
                     </form>
         </td>
         <td>
             <form>
               <input type="hidden" name="i" value="<%=i%>"/>
                     <input type="submit" name="del" value="Excluir">
+                    
                     </form>
         </td>
       </tr> 
@@ -158,7 +202,7 @@
     </tbody>
   </table>
         </div>
-        
+   </center>     
     <footer>
         <div class="rodape">
             <p>Todos os direitos reservados</p>
