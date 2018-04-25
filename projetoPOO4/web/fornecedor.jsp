@@ -4,52 +4,52 @@
     Author     : Ton
 --%>
 
-<%@page import="br.com.fatecpggrupo3.bd.BdClientes"%>
-<%@page import="br.com.fatecpggrupo3.bd.Clientes"%>
+<%@page import="br.com.fatecpggrupo3.bd.BdFornecedores"%>
+<%@page import="br.com.fatecpggrupo3.bd.Fornecedores"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <% int indice = 0;%>
 
 <%  
-        Clientes c = new Clientes();
-        c.setNome("");
-        c.setCpf("");
-        c.setRg("");
-        c.setEmail("");
-        c.setTelefone("");
-        c.setEndereco("");
+        Fornecedores f = new Fornecedores();
+        f.setNome("");
+        f.setRazaoSocial("");
+        f.setCnpj("");
+        f.setEmail("");
+        f.setTelefone("");
+        f.setEndereco("");
     if (request.getParameter("add")!= null){
-        c.setNome(request.getParameter("nome"));
-        c.setCpf(request.getParameter("cpf"));
-        c.setRg(request.getParameter("rg"));
-        c.setEmail(request.getParameter("email"));
-        c.setTelefone(request.getParameter("telefone"));
-        c.setEndereco(request.getParameter("endereco"));    
+        f.setNome(request.getParameter("nome"));
+        f.setRazaoSocial(request.getParameter("razao"));
+        f.setCnpj(request.getParameter("cnpj"));
+        f.setEmail(request.getParameter("email"));
+        f.setTelefone(request.getParameter("telefone"));
+        f.setEndereco(request.getParameter("endereco"));    
         
-        BdClientes.getClientesList().add(c);
+        BdFornecedores.getFornecedoresList().add(f);
         response.sendRedirect(request.getRequestURI());
 } else if (request.getParameter("del") != null){
         int i = Integer.parseInt(request.getParameter("i"));
-        BdClientes.getClientesList().remove(i);
+        BdFornecedores.getFornecedoresList().remove(i);
         response.sendRedirect(request.getRequestURI());
 } else if (request.getParameter("alt") != null){
         
-        c.setNome(BdClientes.getClientesList().get(Integer.parseInt(request.getParameter("i"))).getNome());
-        c.setCpf(BdClientes.getClientesList().get(Integer.parseInt(request.getParameter("i"))).getCpf());
-        c.setRg(BdClientes.getClientesList().get(Integer.parseInt(request.getParameter("i"))).getRg());   
-        c.setEmail(BdClientes.getClientesList().get(Integer.parseInt(request.getParameter("i"))).getEmail());
-        c.setTelefone(BdClientes.getClientesList().get(Integer.parseInt(request.getParameter("i"))).getTelefone());
-        c.setEndereco(BdClientes.getClientesList().get(Integer.parseInt(request.getParameter("i"))).getEndereco());
+        f.setNome(BdFornecedores.getFornecedoresList().get(Integer.parseInt(request.getParameter("i"))).getNome());
+        f.setRazaoSocial(BdFornecedores.getFornecedoresList().get(Integer.parseInt(request.getParameter("i"))).getRazaoSocial());
+        f.setCnpj(BdFornecedores.getFornecedoresList().get(Integer.parseInt(request.getParameter("i"))).getCnpj());   
+        f.setEmail(BdFornecedores.getFornecedoresList().get(Integer.parseInt(request.getParameter("i"))).getEmail());
+        f.setTelefone(BdFornecedores.getFornecedoresList().get(Integer.parseInt(request.getParameter("i"))).getTelefone());
+        f.setEndereco(BdFornecedores.getFornecedoresList().get(Integer.parseInt(request.getParameter("i"))).getEndereco());
         indice = Integer.parseInt(request.getParameter("i"));
 
 } else if (request.getParameter("salvar") !=null){
-        c.setNome(request.getParameter("nome"));
-        c.setCpf(request.getParameter("cpf"));
-        c.setRg(request.getParameter("rg"));
-        c.setEmail(request.getParameter("email"));
-        c.setTelefone(request.getParameter("telefone"));
-        c.setEndereco(request.getParameter("endereco")); 
-        BdClientes.clientesList.set(Integer.parseInt(request.getParameter("indice")), c);
+        f.setNome(request.getParameter("nome"));
+        f.setRazaoSocial(request.getParameter("razao"));
+        f.setCnpj(request.getParameter("cnpj"));
+        f.setEmail(request.getParameter("email"));
+        f.setTelefone(request.getParameter("telefone"));
+        f.setEndereco(request.getParameter("endereco")); 
+        BdFornecedores.fornecedoresList.set(Integer.parseInt(request.getParameter("indice")), f);
 
 }      
 %>
@@ -60,7 +60,7 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <title>Cliente</title>
+        <title>Fornecedor</title>
     </head>
     <body>
         
@@ -84,7 +84,7 @@
          
     <div class="container">
         <div class="titulo">
-            <h1>Cadastro de Cliente</h1>
+            <h1>Cadastro de Fornecedor</h1>
         </div>
     </div>
     
@@ -94,14 +94,14 @@
             <div class="row">
                 <div class="col-md-6">
                 <div class="form-group">
-                <label for="usr">Nome Completo:</label>
-                <input type="text" class="form-control" id="usr" name="nome" required="" value="<%= c.getNome() %>">
+                <label for="usr">Nome:</label>
+                <input type="text" class="form-control" id="usr" name="nome" required="" value="<%= f.getNome() %>">
                 </div>
                 </div>
         <div class="col-md-4">
             <div class="form-group">
-            <label for="usr">CPF:</label>
-            <input type="text" class="form-control" id="usr" name="cpf" required="" maxlength="11" minlength="11" value="<%= c.getCpf()%>">
+            <label for="usr">Razao Social</label>
+            <input type="text" class="form-control" id="usr" name="razao" required="" maxlength="11" minlength="11" value="<%= f.getRazaoSocial()%>">
         </div>
         </div>
         </div>
@@ -110,13 +110,13 @@
      <div class="col-md-4">
          <div class="form-group">
          <label for="usr">RG:</label>
-         <input type="text" class="form-control" id="usr" name="rg" required="" maxlength="14" value="<%= c.getRg()%>">
+         <input type="text" class="form-control" id="usr" name="cnpj" required="" maxlength="14" value="<%= f.getCnpj()%>">
     </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
         <label for="usr">Email:</label>
-        <input type="email" class="form-control" id="usr" name="email" required="" value="<%= c.getEmail()%>">
+        <input type="email" class="form-control" id="usr" name="email" required="" value="<%= f.getEmail()%>">
     </div>
     </div>
     </div>
@@ -126,13 +126,13 @@
             <div class="form-group">
             <label for="usr">Telefone:</label>
             <input type="text" class="form-control" id="usr" name="telefone"
-                   required="" maxlength="12" minlength="11" value="<%= c.getTelefone()%>">
+                   required="" maxlength="12" minlength="11" value="<%= f.getTelefone()%>">
       </div>
       </div>
         <div class="col-md-6">
             <div class="form-group">
             <label for="usr">Endereço:</label>
-            <input type="text" class="form-control" id="usr" name="endereco" required="" value="<%= c.getEndereco()%>">
+            <input type="text" class="form-control" id="usr" name="endereco" required="" value="<%= f.getEndereco()%>">
         </div>
         </div>
         </div>
@@ -159,7 +159,7 @@
         <center>
         <div class="cliente-cadastrado">
             
-            <p>Clientes Cadastrados</p>
+            <p>Fornecedores Cadastrados</p>
         </div>
         
         <div class="col-md-12 caixa-tabela">    
@@ -167,23 +167,23 @@
     <thead>
       <tr>
         <th>Nome Completo</th>
-        <th>CPF</th>
-        <th>RG</th>
+        <th>Razao Social</th>
+        <th>CNPJ</th>
         <th>Email</th>
         <th>Telefone</th>
         <th>Endereço</th>
       </tr>
     </thead>
     <tbody>
-        <%for (int i =0; i<BdClientes.getClientesList().size();i++) {
+        <%for (int i =0; i<BdFornecedores.getFornecedoresList().size();i++) {
         %>
       <tr>
-        <td><%= BdClientes.getClientesList().get(i).getNome() %></td>
-        <td><%= BdClientes.getClientesList().get(i).getCpf() %></td>
-        <td><%= BdClientes.getClientesList().get(i).getRg() %></td>
-        <td><%= BdClientes.getClientesList().get(i).getEmail() %></td>
-        <td><%= BdClientes.getClientesList().get(i).getTelefone() %></td>
-        <td><%= BdClientes.getClientesList().get(i).getEndereco() %></td>
+          <td><%= BdFornecedores.getFornecedoresList().get(i).getNome() %></td>
+        <td><%= BdFornecedores.getFornecedoresList() %></td>
+        <td><%= BdFornecedores.getFornecedoresList().get(i).getRazaoSocial()%></td>
+        <td><%= BdFornecedores.getFornecedoresList().get(i).getCnpj() %></td>
+        <td><%= BdFornecedores.getFornecedoresList().get(i).getTelefone() %></td>
+        <td><%= BdFornecedores.getFornecedoresList().get(i).getEndereco() %></td>
         <td>
             <form>
                 <input type="hidden" name="i" value="<%=i%>"/>

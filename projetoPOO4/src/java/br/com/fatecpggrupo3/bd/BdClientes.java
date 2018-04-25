@@ -7,14 +7,17 @@ package br.com.fatecpggrupo3.bd;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author mitsuharu
- */
+
 public class BdClientes {
-    private static ArrayList<Clientes> clientesList = new ArrayList<>();
+    public static ArrayList<Clientes> clientesList = new ArrayList<>();
     
     public static ArrayList<Clientes> getClientesList() {
         return clientesList;
     }
+
+
+    public static void setClientesList(ArrayList<Clientes> aClientesList) {
+        clientesList = aClientesList;
+    }
+    
 }

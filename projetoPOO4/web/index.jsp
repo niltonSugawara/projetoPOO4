@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <title>JSP Page</title>
+        <title>Inicio</title>
     </head>
     <body>
         
@@ -26,11 +26,12 @@
   </div>
 </nav>
      
-      <div class="caixa-img">
-         <a href="cliente.jsp">
-          <img src="img/cliente.png" class="cliente">
+        <div  class="caixa-img" >
+         <a href="cliente.jsp" >
+             <img src="img/cliente.png" class="cliente">
           </a>
-          <a href="#">
+
+          <a href="fornecedor.jsp">
           <img src="img/fornecedor.png">
           </a>
           <span class="clientespan">Cliente</span>
@@ -43,7 +44,7 @@
 
     <footer>
         <div class="rodape inicio">
-            <p>Todos os direiitos reservados</p>
+            <p>Todos os direitos reservados</p>
         </div>
     </footer>
         
